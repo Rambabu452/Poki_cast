@@ -2,6 +2,11 @@
 * {
 	box-sizing: border-box;
 }
+.square {
+	height: 50px;
+	width: 50px;
+	background-color: #555;
+}
 
 body {
 	background: white;
@@ -10,52 +15,59 @@ body {
 	align-items: center;
 	justify-content: center;
 	
-	margin: 0;
 }
-
+/* styles for the container */
 .poke-container {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: space-between;
 	justify-content: center;
 	margin: 0 auto;
-	max-width: 1500px;
+	max-width: 1200px;
+	
+	
 }
-
+/*styles for the inside the text  */
 .pokemon {
 	background-color: #eee;
-	border-radius: 100px;
 	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
-	margin: 10px;
+	margin: 20px;
 	padding: 20px;
+	width:250px;
+	height:220%;
 	text-align: center;
 }
-
+/* set the container inside the circle and image as center */
 .pokemon .img-container {
 	background-color: rgba(255, 255, 255, 0.6);
 	border-radius: 50%;
-	width: 120px;
-	height: 120px;
+	margin-left: auto;
+    margin-right: auto;
+	width: 60px;
+	height: 60%;
 	text-align: center;
 }
 
 .pokemon .img-container img {
 	margin-top: 20px;
 	max-width: 90%;
+	
 }
-
+/*height of the pokemon info */
 .pokemon .info {
 	margin-top: 20px;
 }
-
+/* styles for the pokemon number */
 .pokemon .number {
 	background-color: rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	font-size: 0.8em;
 	padding: 5px 10px;
+	
 }
-
+/* styles for the pokemon name */
 .pokemon .name {
 	margin: 15px 0 7px;
 	letter-spacing: 1px;
+	
 }

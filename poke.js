@@ -1,5 +1,5 @@
-const poke_container = document.getElementById('poke_container');
-const pokemons_number = 50;
+const poke_container = document.getElementById('poke_container');   /* container attached to the html */
+const pokemons_number = 50;                                         /*the entaire project having 50 containers */
 const colors = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
@@ -16,16 +16,16 @@ const colors = {
     fighting: '#E6E0D4',
     normal: '#F5F5F5'
 };
-const main_types = Object.keys(colors);
+const main_types = Object.keys(colors);                                 /* fetch card colors */
 
-const fetchPokemons = async () => {
-    for (let i = 1; i <= pokemons_number; i++) {
+const fetchPokemons = async () => {                                     /* get pokimon api */
+    for (let i = 1; i <= pokemons_number; i++) {                        /* increse the poki container numbers */
         await getPokemon(i);
     }
 };
 
 const getPokemon = async id => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;              /* pokemon url and fetching the poki url */
     const res = await fetch(url);
     const pokemon = await res.json();
     console.log(pokemon);
@@ -42,8 +42,8 @@ function createPokemonCard(pokemon) {
     const color = colors[type];
 
     pokemonEl.style.backgroundColor = color;
-
-    const pokeInnerHTML = `
+                                                                    
+    const pokeInnerHTML = `                                                 
         <div class="img-container">
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/ruby-sapphire/shiny/${pokemon.id}.png" alt="${name}" onclick="window.open(this.src)" />
         </div>
@@ -54,7 +54,7 @@ function createPokemonCard(pokemon) {
             <h3 class="name">${name}</h3>
             <small class="type">Type: <span>${type}</span></small>
         </div>
-    `;
+    `;                                                                    /* Card Front data and HTML */
 
     pokemonEl.innerHTML = pokeInnerHTML;
 
@@ -62,4 +62,3 @@ function createPokemonCard(pokemon) {
 }
 
 fetchPokemons();
-
